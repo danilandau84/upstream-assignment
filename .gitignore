@@ -1,0 +1,4 @@
+.venv
+/venv
+/data
+last_timestamp.txt
