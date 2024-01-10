@@ -43,3 +43,12 @@ def detect_value(value: str, pattern):
         return value
     return None
 
+'''
+
+Reduce CPU of Regex:
+
+1. Using multi-processing techs reducing the CPU 
+2. Usage of regex could be a void if columns would have type definition and validation:
+   E.g. vin - type of uuid, frontLeftDoor and DriverSeatBelt would be enum   
+
+'''
