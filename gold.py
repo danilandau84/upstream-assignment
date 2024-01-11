@@ -14,6 +14,10 @@ def run():
 def generate_vin_last_state_report():
     input_directory_path = 'data/purged-data'
     output_directory_path = 'data/vin-last-state-report'
+    '''
+    for efficiency, you can generate new report based on last report 
+    and process the recent purged file that haven't analyzed yet
+    '''
     df = merge_all_parquets_into_dataframe(input_directory_path, output_directory_path)
 
     latest_timestamp_per_vin_df = df.groupby('vin')['timestamp'].max().reset_index().rename(columns={'vin': 'Vin', 'timestamp': 'Last_reported_timestamp' })
