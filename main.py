@@ -1,3 +1,5 @@
+import logging
+
 import bonus
 import bronze
 import silver
@@ -5,6 +7,7 @@ import gold
 from dotenv import load_dotenv
 
 load_dotenv()
+logging.basicConfig(level=logging.INFO)
 
 if __name__ == '__main__':
     bronze.run()

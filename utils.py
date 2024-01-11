@@ -30,3 +30,8 @@ def make_dir_if_not_exist(dir_name: str):
 def save_dataframe_to_file(df: DataFrame, file_path: str):
     table = (pa.Table.from_pandas(df))
     pq.write_table(table, file_path)
+
+
+def get_datetime_from_file_name(file_name: str) -> datetime:
+    date_time_str = file_name.replace(".parquet","")
+    return datetime.strptime(date_time_str, "%Y-%m-%d-%H")
