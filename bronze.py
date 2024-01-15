@@ -22,7 +22,7 @@ def run():
     dfs_by_partitions = divid_dataframes_by_partition(filtered_df)
     for name, sub_df in dfs_by_partitions.items():
         create_or_merge_parquet_file(sub_df, name)
-   store_cached_last_timestamp(filtered_df['timestamp'].max(), os.getenv("CACHE-TIMESTAMP-PATH"))
+    store_cached_last_timestamp(filtered_df['timestamp'].max(), os.getenv("CACHE-TIMESTAMP-PATH"))
  
 
 def request_data_from_source() -> str:
